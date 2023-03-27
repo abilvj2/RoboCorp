@@ -15,6 +15,8 @@ Upload a PDF and get the result as csv
 *** Keywords ***
 Open Browser
     
+#Login to Delta Dental and input information
+
     Open Available Browser    https://identity.deltadental.com/provider/providers_loggedin.jsp
     Input Text    //*[@id="usernameInput"]    Asmile12
     Input Password    //*[@id="passwordInput"]    Dental123!@
@@ -32,6 +34,8 @@ Open Browser
     Wait Until Element Is Visible    xpath=/html/body/div/div/section[1]/div[2]/div[3]/div/div/div[2]
     # ${html_table}=    Get WebElements    //*[@id="tab-1"]/div[3]/div/div/div/div/div/div/table[1]
     
+#Getting the web elements from the displayed information.
+
     ${html_table}=    Get Text    xpath=/html/body/div/div/section[1]/div[2]/div[3]/div/div/div[3]/div/div/div/div/div/div/table[1]/tbody
     ${Insurance_Company}=    Get Text    xpath=/html/body/div/div/section[1]/div[2]/div[3]/div/div/div[3]/div/div/div/div/div/div/table[1]/tbody/tr[1]/td[2]
     ${Insureds_Employer}=    Get Text    xpath=//*[@id="tab-1"]/div[3]/div/div/div/div/div/div/table[1]/tbody/tr[5]/td[2]
@@ -52,11 +56,12 @@ Open Browser
     # FOR    ${row}    IN    @{table}
     #     Log To Console    ${row}
     # END  
+    
     # Close All Browsers
 
+#Filling the PDF file 
+
     Open Pdf    ins_adobeformat.pdf
-    # Open Pdf    Input/formex.pdf
-    # Set Field Value    Postcode Text Box   testvalue
     Set Field Value    field_name=Patient Name   value=Zhilin CAO
     Set Field Value    field_name=Insurance Company   value=${Insurance_Company}
     # Set Field Value    field_name=Insured Policy ID or SS    value=${Claim}
@@ -75,17 +80,20 @@ Open Browser
     Set Field Value    Insurance Phone    value=${Insurance_Number}
     Set Field Value    Mail Claims To 1    value=${address}[0]
     Set Field Value    Mail Claims To 2    value=${address}[1]
-    Set Field Value    Verified By    Delta
-    Set Field Value    Max Family DED    value=N/A
-    Set Field Value    Ben Year    value=2023
-    Set Field Value    to    2024
-    Set Field Value    Single DED    value=1419
-    Set Field Value    DED Applies    50
+    # Set Field Value    Verified By    Delta
+    # Set Field Value    Max Family DED    value=N/A
+    # Set Field Value    Ben Year    value=2023
+    # Set Field Value    to    2024
+    # Set Field Value    Single DED    value=1419
+    # Set Field Value    DED Applies    50
     Set Field Value    field_name=Patient NameRow1    value=Zhilin CAO
     Set Field Value    field_name=Patient NameRow2    value=Zhilin CAO
     Set Field Value    field_name=Patient NameRow3    value=Zhilin CAO
     Set Field Value    DateRow1    01/04/2023
     Set Field Value    DateRow2    12/11/2013
+
+#Save the PDF 
+
     Save Field Values        source_path=ins_adobeformat.pdf
     ...                      output_path= Output_filled.pdf
     ...                      use_appearances_writer=True
