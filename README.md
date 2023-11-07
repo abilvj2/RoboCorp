@@ -12,6 +12,12 @@ An insurance claim is done end to end in this project entirely without human int
 - PDF manipulation to fill dentist forms
 - Easy-to-use Robot Framework keywords
 - Customizable test cases and test data
+## Background study
+
+- Studying the cost and estimates of different Cloud APIs to be integrated to the robot.
+- Comparing performance and choosing Google Cloud API based on specific use case based testing
+- Researched and documented Open Dental software which can be critical in filling applications.
+- Amalgamation of different components to work unified with the robot
 
 ## Installation
 
