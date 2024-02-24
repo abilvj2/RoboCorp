@@ -31,7 +31,7 @@ Now the task of manipulating the values using Form Processor for keyword value m
 Now the robot framework will fill the PDF according to the identified field values.
 ![Filled PDF from the data](https://github.com/abilvj2/RoboCorp/blob/main/fillled_pdf.JPG)
 
-![Key word Mapping](https://github.com/abilvj2/RoboCorp/blob/main/Sample_Extraction_PDF_using%20Form%20Processor.JPG)
+
 ## Installation
 
 1. Clone the repository:
