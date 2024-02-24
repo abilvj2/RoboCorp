@@ -13,6 +13,15 @@ An insurance claim is done end to end in this project entirely without human int
 - Easy-to-use Robot Framework keywords
 - Customizable test cases and test data
 
+##Screenshots
+The project utilises Robot Framewoek, Google Document AI APIs. 
+1.
+To extract text contents from HTML tables and iterate over them in Robocorp, you can use the "Robot Framework Browser" library along with the "Robot Framework Selenium Library".
+In this example, the table is located using an XPath expression and stored in the ${table} variable. The outer loop iterates over each row in the table, and the inner loop iterates over each cell in the row. The text content of each cell is logged to the console using the "Log" keyword.
+
+The extracted keywords are saved in an excel file
+![Alt text](Sample_Extraction_PDF_using Form Processor.jpeg)
+
 ## Installation
 
 1. Clone the repository:
